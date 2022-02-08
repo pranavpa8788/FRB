@@ -2,7 +2,8 @@ import praw
 import datetime
 
 def reddit_scraper_main(subreddit_name, mode, post_limit, keyword) : 
-
+    
+    # Put your own client_id, client_secret, user_agent inside "" below
     client_id = "client_id"
     client_secret = "client_secret"
     user_agent = "user_agent"
@@ -37,8 +38,6 @@ def reddit_scraper_main(subreddit_name, mode, post_limit, keyword) :
         
         
 if __name__ == '__main__' : 
-    
-    # posts = reddit_scraper_main('slavelabour', 'new', 20, '[task]')
 
     # For hiring freelancers
     subreddits_buy = {
@@ -54,7 +53,8 @@ if __name__ == '__main__' :
             'remotework' : 'hiring',
             'forhire' : 'hiring',
             'freelance_forhire' : 'hiring'}
-
+    
+    # Change subreddits_sell to subreddits_buy if you want to hire freelancers
     for subreddit, keyword in subreddits_sell.items() :
 
         posts = reddit_scraper_main(subreddit, 'new', 20, keyword)
